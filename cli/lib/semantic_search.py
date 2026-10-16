@@ -22,8 +22,8 @@ class SemanticSearch():
         for document in self.documents:
             self.document_map[document["id"]] = document
             movies.append(f"{document['title']}: {document['description']}")
-        self.embeddings = self.model.encode(movies,show_progress_bar=True)
-        np.save("./cache/movie_embeddings.npy",self.embeddings)
+        # self.embeddings = self.model.encode(movies,show_progress_bar=True)
+        # np.save("./cache/movie_embeddings.npy",self.embeddings)
         return self.embeddings
 
     def load_or_create_embeddings(self, documents):
